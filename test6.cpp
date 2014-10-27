@@ -12,7 +12,7 @@ class Radius
 public:
     Radius(int x)
     {
-        this.r = x;
+        this->r = x;
     }
 
     ~Radius()
@@ -43,7 +43,7 @@ public:
     }
     double area(Radius a)
     {
-        s = a.r * a.r * 3.1415926;
+        return s = a.r * a.r * 3.1415926;
     }
 
 private:
