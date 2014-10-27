@@ -1,6 +1,9 @@
 #include <iostream> 
+#include <cstring>
 
-using namespace std;  
+
+using namespace std;
+  
 class Internet;  
   
 class Country  
@@ -32,10 +35,12 @@ void Internet::Editcname(Country &temp)
 {  
     strcpy(temp.cname,"中华人民共和国");   
 }  
-void main()  
+int  main()  
 {  
     Internet a("中国软件开发实验室","www.cndev-lab.com");  
     Country b;  
     a.Editcname(b);  
     cin.get();  
+
+    return 0;
 }
