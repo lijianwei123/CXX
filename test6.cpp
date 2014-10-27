@@ -1,46 +1,66 @@
-#include <iostream> 
-#include <cstring>
-
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
-  
-class Internet;  
-  
-class Country  
-{  
-    public:  
-        Country()  
-        {  
-            strcpy(cname,"中国");  
-        }  
 
-    friend class Internet;//友类的声明  
-    protected:  
-        char cname[30];  
-};  
-class Internet  
-{  
-    public:    
-        Internet(char *name,char *address)    
-        {    
-            strcpy(Internet::name,name);    
-            strcpy(Internet::address,address);   
-        }  
-        void Editcname(Country &temp);  
-    protected:    
-        char name[20];  
-        char address[20];  
-};  
-void Internet::Editcname(Country &temp)  
-{  
-    strcpy(temp.cname,"中华人民共和国");   
-}  
-int  main()  
-{  
-    Internet a("中国软件开发实验室","www.cndev-lab.com");  
-    Country b;  
-    a.Editcname(b);  
-    cin.get();  
+class Radius
+{
 
-    return 0;
+    friend class Circle;
+    friend void Show_r(Radius &n);
+
+public:
+    Radius(int x)
+    {
+        this.r = x;
+    }
+
+    ~Radius()
+    {
+
+    }
+
+private:
+    int r;
+};
+
+void Show_r(Radius &n)
+{
+    cout << "圆的半径为:" << n.r << endl;
+}
+
+
+class Circle
+{
+public:
+    Circle()
+    {
+
+    }
+    ~Circle()
+    {
+
+    }
+    double area(Radius a)
+    {
+        s = a.r * a.r * 3.1415926;
+    }
+
+private:
+    double s;
+};
+
+
+int main(int argc, char **argv)
+{
+    Radius objRadius(9);
+    Circle objCircle;
+
+    Show_r(objRadius);
+    cout << "面积为：" << objCircle.area(objRadius) << endl;
+
+    system("PAUSE");
+
+    return EXIT_SUCCESS;
+    
 }
