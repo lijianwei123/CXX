@@ -1,4 +1,6 @@
-#include <iostream.h>
+#include <iostream>
+//验证virtual
+using namespace std;
 
 class Base
 {
@@ -34,7 +36,7 @@ public:
 	}
 };
  
-void main(void)
+int main(void)
 {
 	Derived d;
 	Base *pb = &d;
@@ -48,4 +50,6 @@ void main(void)
 	// Bad : behavior depends on type of the pointer
 	pb->h(3.14f); // Base::h(float) 3.14 (surprise!)
 	pd->h(3.14f); // Derived::h(float) 3.14
+	
+	return 0;
 }
