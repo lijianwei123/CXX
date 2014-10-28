@@ -9,5 +9,5 @@ int main()
 
 	auto_ptr<string> ptr(p);
 
-	cout << ptr << endl;
+	cout << *p << endl;
 }
