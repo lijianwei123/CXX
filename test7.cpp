@@ -7,11 +7,11 @@ using namespace std;
 class Test
 {
 public:
-	Test()
+	Test(int a):num(a)
 	{
 		cout << "Test" << endl;
 	}
-private:
+protected:
 	int num;
 };
 
@@ -19,9 +19,14 @@ private:
 class Test2 : public Test
 {
 public:
-	Test2()
+	Test2():Test(0)
 	{
-		cout << "Test2" << endl;
+
+	}
+	Test2(int a):Test(a)
+	{
+		cout << "Test2 one param" << endl;
+		cout << "num:" << num << endl;
 	}
 };
 
@@ -29,5 +34,5 @@ public:
 int main(int argc, char **argv)
 {
 
-	Test2 test2Obj;
+	Test2 test2Obj(20);
 }
