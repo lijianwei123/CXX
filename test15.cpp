@@ -1,5 +1,4 @@
-//验证系统自带的hash_map
-//
+//楠岃瘉绯荤粺鑷甫鐨刪ash_map
 #include <iostream>
 #include <ext/hash_map>
 
