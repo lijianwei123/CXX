@@ -1,4 +1,5 @@
 //验证系统自带的hash_map
+//@see  http://blog.csdn.net/wesleyluo/article/details/7046865
 #include <iostream>
 
 #include <ext/hash_map>
