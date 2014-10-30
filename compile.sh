@@ -6,4 +6,4 @@ if test -z "$filename"; then
 fi
 #see  http://www.cnblogs.com/chengmo/archive/2010/10/02/1841355.html
 objname=${filename%%.cpp}
-g++ -g $filename -o $objname
+g++ -g -Wno-deprecated $filename -o $objname

@@ -1,8 +1,10 @@
 //验证系统自带的hash_map
 #include <iostream>
-#include <ext/hash_map>
 
-using namespce __gnu_cxx;
+#include <ext/hash_map>
+#define _CRT_SECURE_NO_DEPRECATE
+
+using namespace __gnu_cxx;
 using namespace std;
 
 namespace __gnu_cxx
@@ -11,7 +13,7 @@ namespace __gnu_cxx
 	{
 		size_t operator()(const string& s) const
 		{
-			return __stl_hash_stirng(s.c_str());
+			return __stl_hash_string(s.c_str());
 		}
 	};
 
