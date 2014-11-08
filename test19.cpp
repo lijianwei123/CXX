@@ -1,3 +1,4 @@
+//g++ -g -Wall index.c -o index
 #include <iostream>
 #include <stdio.h>
 #include <boost/make_shared.hpp>
