@@ -1,4 +1,5 @@
 //验证 线程中创建多进程的例子
+//g++ -g -Wall test20.cpp -lpthread -o test20
 #include <iostream>
 #include <sys/types.h>
 #include <sys/wait.h>
