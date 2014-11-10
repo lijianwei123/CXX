@@ -1,4 +1,7 @@
 //验证共享内存（引用指针)
+//ipcs -m 查看ipc共享
+//ipcrm -m key 手动删除ipc共享
+//g++ -g -Wall test21.cpp -o test21
 #include <iostream>
 #include <stdio.h>
 #include <unistd.h>
@@ -35,7 +38,7 @@ int main()
 		shm_shared_t *shm_ptr = (shm_shared_t *)shmat(shm_id, NULL, 0);
 		printf("shm_ptr->name: %s\n", shm_ptr->name);
 		shm_ptr->name = const_cast<char *>("weiyanping");
-		sleep(10);
+		sleep(1);
 		exit(EXIT_SUCCESS); 
 	}
 
@@ -43,7 +46,7 @@ int main()
 	if (pid == 0) {	
 		shm_shared_t *shm_ptr = (shm_shared_t *)shmat(shm_id, NULL, 0);
                 printf("shm_ptr->name: %s\n", shm_ptr->name);
-		sleep(10);
+		sleep(1);
 		exit(EXIT_SUCCESS);
 	}
 	
@@ -53,6 +56,9 @@ int main()
 		printf("child pid: %d done\n", cPid);
 		printf("shm_ptr->name:%s\n", shm_ptr->name);
 	}
+	int ret = shmctl(shm_id, IPC_RMID, NULL);
+	printf("%d\n", ret);
+
 	
 	return 0;
 }
