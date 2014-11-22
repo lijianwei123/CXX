@@ -31,6 +31,8 @@ public:
 int main()
 {
 	shared_ptr<test> test2_ptr;
+	cout << test2_ptr.use_count() << endl;
+	
 	shared_ptr<test> test_ptr = make_shared<test>();
 	cout << test_ptr.use_count() << endl;
 	test2_ptr = test_ptr;	
